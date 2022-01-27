@@ -173,3 +173,19 @@ const addTeamMembers = async () => {
   const answers = await inquirer.prompt(employeeQuestions);
   return answers;
 };
+
+//function to generate HTML
+
+const writeToFile = (data) => {
+  const callback = (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Generated Team Profile successfully");
+    }
+  };
+
+  fs.writeFile("./dist/index.html", data, callback);
+};
+
+init();
