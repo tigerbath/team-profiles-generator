@@ -156,3 +156,20 @@ const createTeam = async () => {
   }
   return Team;
 };
+
+const addTeamMembers = async () => {
+  const employeeQuestions = [
+    {
+      type: "list",
+      name: "employeeType",
+      message: "What type of employee needs to be added?",
+      choices: [
+        { name: "Engineer", value: "engineer", short: "Engineer" },
+        { name: "Intern", value: "intern", short: "Intern" },
+        { name: "None", value: "none", short: "None" },
+      ],
+    },
+  ];
+  const answers = await inquirer.prompt(employeeQuestions);
+  return answers;
+};
