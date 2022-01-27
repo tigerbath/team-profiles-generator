@@ -126,3 +126,12 @@ const addIntern = async () => {
   const intern = new Intern(name, id, email, school);
   return intern;
 };
+
+const init = async () => {
+  const manager = await addManager();
+  const team = await createTeam();
+  const myTeam = [manager, ...team];
+  const HTMLMarkup = generateHTML(myTeam);
+  console.log(HTMLMarkup);
+  writeToFile(HTMLMarkup);
+};
