@@ -135,3 +135,24 @@ const init = async () => {
   console.log(HTMLMarkup);
   writeToFile(HTMLMarkup);
 };
+
+const createTeam = async () => {
+  let Team = [];
+  let isTeam = false;
+  while (!isTeam) {
+    const { employeeType } = await addTeamMembers();
+    if (employeeType === "none") {
+      isTeam = true;
+    } else {
+      if (employeeType === "engineer") {
+        const engineer = await addEngineer();
+        Team.push(engineer);
+      }
+      if (employeeType === "intern") {
+        const intern = await addIntern();
+        Team.push(intern);
+      }
+    }
+  }
+  return Team;
+};
