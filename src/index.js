@@ -55,3 +55,38 @@ const addManager = async () => {
   const manager = new Manager(name, id, email, officeNumber);
   return manager;
 };
+
+const addEngineer = async () => {
+  const engineerQuestions = [
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter the engineer name",
+      validate: validateInput,
+    },
+
+    {
+      type: "input",
+      name: "id",
+      message: "Please enter the engineer id",
+      validate: validateInput,
+    },
+
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter the engineer email",
+      validate: validateInput,
+    },
+
+    {
+      type: "input",
+      name: "github",
+      message: "Please enter the engineer github profile",
+      validate: validateInput,
+    },
+  ];
+  const { name, id, email, github } = await inquirer.prompt(engineerQuestions);
+  const engineer = new Engineer(name, id, email, github);
+  return engineer;
+};
