@@ -90,3 +90,34 @@ const addEngineer = async () => {
   const engineer = new Engineer(name, id, email, github);
   return engineer;
 };
+
+const addIntern = async () => {
+    const internQuestions = [
+      {
+        type: "input",
+        name: "name",
+        message: "Please enter the intern name",
+        validate: validateInput,
+      },
+  
+      {
+        type: "input",
+        name: "id",
+        message: "Please enter the intern id",
+        validate: validateInput,
+      },
+  
+      {
+        type: "input",
+        name: "email",
+        message: "Please enter the intern email address",
+        validate: validateInput,
+      },
+  
+      {
+        type: "input",
+        name: "school",
+        message: "Please enter the intern school name",
+        validate: validateInput,
+      },
+    ];
