@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/tigerbath/team-profiles-generator/issues"
   },
-  "homepage": "https://github.com/tigerbath/team-profiles-generator#readme"
+  "homepage": "https://github.com/tigerbath/team-profiles-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.7",
+    "watch": "^0.13.0"
+  }
 }
